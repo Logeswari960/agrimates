@@ -1,4 +1,5 @@
-const API_BASE = import.meta.env.VITE_API_URL || '/api';
+const rawApiUrl = import.meta.env.VITE_API_URL || '/api';
+const API_BASE = rawApiUrl.replace(/\/$/, '');
 
 class ApiError extends Error {
   constructor(message, status) {
